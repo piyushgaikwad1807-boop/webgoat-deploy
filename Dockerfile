@@ -1,10 +1,8 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y wget
-
-RUN wget https://github.com/WebGoat/WebGoat/releases/download/v8.2.2/webgoat-8.2.2.jar -O webgoat.jar
+ADD https://github.com/WebGoat/WebGoat/releases/download/v8.2.2/webgoat-8.2.2.jar webgoat.jar
 
 EXPOSE 8080
 
